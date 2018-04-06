@@ -2,6 +2,8 @@ FROM ruby:2.4.1-alpine
 
 RUN apk update
 RUN apk add alpine-sdk tzdata postgresql-dev
+RUN apk add sqlite-libs
+RUN apk add sqlite-dev
 
 # Machine timezone
 RUN cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime

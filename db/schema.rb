@@ -1,0 +1,285 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 0) do
+
+  create_table "domains", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "granted_powers"
+    t.string "spell_1"
+    t.string "spell_2"
+    t.string "spell_3"
+    t.string "spell_4"
+    t.string "spell_5"
+    t.string "spell_6"
+    t.string "spell_7"
+    t.string "spell_8"
+    t.string "spell_9"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "domain_name_index"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "family"
+    t.string "category"
+    t.string "subcategory"
+    t.string "cost"
+    t.string "dmg_s"
+    t.string "armor_shield_bonus"
+    t.string "maximum_dex_bonus"
+    t.string "dmg_m"
+    t.string "weight"
+    t.string "critical"
+    t.string "armor_check_penalty"
+    t.string "arcane_spell_failure_chance"
+    t.string "range_increment"
+    t.string "speed_30"
+    t.string "type_name"
+    t.string "speed_20"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "equipment_name_index"
+  end
+
+  create_table "feats", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "type_name"
+    t.string "multiple"
+    t.string "stack"
+    t.string "choice"
+    t.text "prerequisite"
+    t.text "benefit"
+    t.text "normal"
+    t.text "special"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "feat_name_index"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "category"
+    t.string "subcategory"
+    t.string "special_ability"
+    t.string "aura"
+    t.string "caster_level"
+    t.string "price"
+    t.string "manifester_level"
+    t.text "prereq"
+    t.string "cost"
+    t.string "weight"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "item_name_index"
+  end
+
+  create_table "monsters", force: :cascade do |t|
+    t.string "family"
+    t.string "name", null: false
+    t.string "altname"
+    t.string "size"
+    t.string "type_name"
+    t.string "descriptor"
+    t.string "hit_dice"
+    t.string "initiative"
+    t.string "speed"
+    t.string "armor_class"
+    t.string "base_attack"
+    t.string "grapple"
+    t.string "attack"
+    t.text "full_attack"
+    t.string "space"
+    t.string "reach"
+    t.string "special_attacks"
+    t.text "special_qualities"
+    t.string "saves"
+    t.string "abilities"
+    t.text "skills"
+    t.string "bonus_feats"
+    t.text "feats"
+    t.text "epic_feats"
+    t.string "environment"
+    t.text "organization"
+    t.string "challenge_rating"
+    t.string "treasure"
+    t.string "alignment"
+    t.string "advancement"
+    t.string "level_adjustment"
+    t.text "special_abilities"
+    t.text "stat_block"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "monster_name_index"
+  end
+
+  create_table "powers", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "discipline"
+    t.string "subdiscipline"
+    t.string "descriptor"
+    t.string "level"
+    t.string "display"
+    t.string "manifesting_time"
+    t.string "range"
+    t.string "target"
+    t.string "area"
+    t.string "effect"
+    t.string "duration"
+    t.string "saving_throw"
+    t.string "power_points"
+    t.string "power_resistance"
+    t.text "short_description"
+    t.text "xp_cost"
+    t.text "description"
+    t.text "augment"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "power_name_index"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "subtype"
+    t.string "key_ability"
+    t.string "psionic"
+    t.string "trained"
+    t.string "armor_check"
+    t.text "description"
+    t.text "skill_check"
+    t.text "action"
+    t.text "try_again"
+    t.text "special"
+    t.text "restriction"
+    t.text "synergy"
+    t.text "epic_use"
+    t.text "untrained"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "skill_name_index"
+  end
+
+  create_table "spells", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "altname"
+    t.string "school"
+    t.string "subschool"
+    t.string "descriptor"
+    t.string "spellcraft_dc"
+    t.string "level"
+    t.text "components"
+    t.string "casting_time"
+    t.string "range"
+    t.string "target"
+    t.string "area"
+    t.string "effect"
+    t.string "duration"
+    t.string "saving_throw"
+    t.string "spell_resistance"
+    t.string "short_description"
+    t.text "to_develop"
+    t.text "material_components"
+    t.string "arcane_material_components"
+    t.text "focus"
+    t.text "description"
+    t.text "xp_cost"
+    t.string "arcane_focus"
+    t.string "wizard_focus"
+    t.string "verbal_components"
+    t.string "sorcerer_focus"
+    t.string "bard_focus"
+    t.string "cleric_focus"
+    t.string "druid_focus"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "spell_name_index"
+  end
+
+  create_table "vocation_details", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "level"
+    t.string "base_attack_bonus"
+    t.string "fort_save"
+    t.string "ref_save"
+    t.string "will_save"
+    t.string "caster_level"
+    t.string "points_per_day"
+    t.string "ac_bonus"
+    t.string "flurry_of_blows"
+    t.string "bonus_spells"
+    t.string "powers_known"
+    t.string "unarmored_speed_bonus"
+    t.string "unarmed_damage"
+    t.string "power_level"
+    t.string "special"
+    t.string "slots_0"
+    t.string "slots_1"
+    t.string "slots_2"
+    t.string "slots_3"
+    t.string "slots_4"
+    t.string "slots_5"
+    t.string "slots_6"
+    t.string "slots_7"
+    t.string "slots_8"
+    t.string "slots_9"
+    t.string "spells_known_0"
+    t.string "spells_known_1"
+    t.string "spells_known_2"
+    t.string "spells_known_3"
+    t.string "spells_known_4"
+    t.string "spells_known_5"
+    t.string "spells_known_6"
+    t.string "spells_known_7"
+    t.string "spells_known_8"
+    t.string "spells_known_9"
+    t.string "reference"
+    t.integer "vocation_id", default: 0, null: false
+    t.index ["name"], name: "class_table_name_index"
+  end
+
+  create_table "vocations", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "type_name"
+    t.string "alignment"
+    t.string "hit_die"
+    t.text "class_skills"
+    t.string "skill_points"
+    t.string "skill_points_ability"
+    t.string "spell_stat"
+    t.text "proficiencies"
+    t.string "spell_type"
+    t.string "epic_feat_base_level"
+    t.string "epic_feat_interval"
+    t.text "epic_feat_list"
+    t.text "epic_full_text"
+    t.string "req_race"
+    t.string "req_weapon_proficiency"
+    t.string "req_base_attack_bonus"
+    t.string "req_skill"
+    t.string "req_feat"
+    t.string "req_spells"
+    t.string "req_languages"
+    t.string "req_psionics"
+    t.string "req_epic_feat"
+    t.string "req_special"
+    t.text "spell_list_1"
+    t.string "spell_list_2"
+    t.string "spell_list_3"
+    t.string "spell_list_4"
+    t.string "spell_list_5"
+    t.text "full_text"
+    t.string "reference"
+    t.index ["name"], name: "class_name_index"
+  end
+
+end
