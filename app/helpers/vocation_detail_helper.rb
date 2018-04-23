@@ -1,0 +1,2 @@
+module VocationDetailHelper
+end

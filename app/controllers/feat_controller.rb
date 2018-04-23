@@ -1,0 +1,2 @@
+class FeatController < ApplicationController
+end

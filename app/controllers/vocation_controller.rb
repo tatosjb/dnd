@@ -1,0 +1,2 @@
+class VocationController < ApplicationController
+end
